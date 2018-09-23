@@ -11,7 +11,6 @@ export class ProjectService {
 
   selectedProject: Project;
   projectList: Project[];
-  //searchKey: String;
 
   constructor(private http : Http) { }
 

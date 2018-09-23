@@ -18,7 +18,8 @@ namespace Timely.Models
         public string Name { get; set; }
         public string Note { get; set; }
         public string Tag { get; set; }
-        
+        public int? timeWorked { get; set; }
+
     }
     
 }

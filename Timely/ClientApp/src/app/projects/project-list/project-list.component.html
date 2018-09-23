@@ -4,22 +4,38 @@
     <th>Note</th>
     <th>Tag</th>
     <th>Time Worked</th>
-    <th>Options</th>
   </tr>
   <tr *ngFor="let project of projectService.projectList">
     <td> {{project.name}}</td>
     <td> {{project.note}}</td>
     <td> {{project.tag}}</td>
-    <td id="clock"> {{timer}}</td>
+    <td><!--name="timeWorked" #timeWorked="ngModel" [(ngModel)]="project.timeWorked"--> {{project.timeWorked}}</td>
+    <!--<td><button (click)="startTimer()">Start</button></td>-->
+    <!--<td><button (click)="pauseTimer()">Stop</button></td>-->
     <td>
-      <a class="btn" (click)="startOrStop()">
-        <!--<i class="fas fa-play"></i>-->
-        {{mode}}
+      <!-- <a class="btn" (click)="startTimer()">
+    <i class="fas fa-play"></i>
+       </a>-->
+
+      <a class="btn" (click)="startTimer(project,project.projectId)">
+        <i class="fa fa fa-play"></i>
       </a>
+    </td>
+    <td>
+      <a class="btn" (click)="pauseTimer(project,project.projectId)">
+        <i class="fa fa fa-stop"></i>
+      </a>
+    </td>
+    <td>
+      <!-- <a class="btn" (click)="startTimer()">
+    <i class="fas fa-play"></i>
+       </a>-->
 
       <a class="btn" (click)="showForEdit(project)">
         <i class="fa fa-pencil-square-o"></i>
       </a>
+    </td>
+    <td>
       <a class="btn text-danger" (click)="onDelete(project.projectId)">
         <i class="fa fa-trash-o"></i>
       </a>

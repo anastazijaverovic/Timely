@@ -25,7 +25,8 @@ export class ProjectComponent implements OnInit {
       ProjectId: null,
       Name : '',
       Note : '',
-      Tag : ''
+      Tag: '',
+      TimeWorked: null
     }
   }
 
