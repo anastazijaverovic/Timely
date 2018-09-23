@@ -1,0 +1,28 @@
+<table *ngIf="projectService.projectList?.length > 0" class="table table-sm table-hover">
+  <tr>
+    <th>Project Name</th>
+    <th>Note</th>
+    <th>Tag</th>
+    <th>Time Worked</th>
+    <th>Options</th>
+  </tr>
+  <tr *ngFor="let project of projectService.projectList">
+    <td> {{project.name}}</td>
+    <td> {{project.note}}</td>
+    <td> {{project.tag}}</td>
+    <td id="clock"> {{timer}}</td>
+    <td>
+      <a class="btn" (click)="startOrStop()">
+        <!--<i class="fas fa-play"></i>-->
+        {{mode}}
+      </a>
+
+      <a class="btn" (click)="showForEdit(project)">
+        <i class="fa fa-pencil-square-o"></i>
+      </a>
+      <a class="btn text-danger" (click)="onDelete(project.projectId)">
+        <i class="fa fa-trash-o"></i>
+      </a>
+    </td>
+  </tr>
+</table>
